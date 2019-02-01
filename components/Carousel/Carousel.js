@@ -6,11 +6,14 @@ class Carousel {
         this.images = [...carousel.querySelectorAll('img')];
 
         this.currentIndex = 0;
+        this.imagesLast = this.images.length - 1;
         this.images[this.currentIndex].style.display = 'block';
 
         this.leftButton.addEventListener('click', () => this.left());
         this.rightButton.addEventListener('click', () => this.right());
     }
+    // didnt have enough time to finish stretch
+
 }
 
 let carousel = new Carousel(document.querySelector('.carousel'));
