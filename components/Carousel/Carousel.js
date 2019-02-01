@@ -6,13 +6,21 @@ class Carousel {
         this.images = [...carousel.querySelectorAll('img')];
 
         this.currentIndex = 0;
-        this.imagesLast = this.images.length - 1;
+        this.imagesLast = this.images[this.images.length - 1];
         this.images[this.currentIndex].style.display = 'block';
 
-        this.leftButton.addEventListener('click', () => this.left());
-        this.rightButton.addEventListener('click', () => this.right());
+        [this.rightButton, this.leftButton].forEach(direction => {
+            direction.addEventListener('click', e => this.direction(e));
+        })
     }
-    // didnt have enough time to finish stretch
+
+    direction(e) {
+        this.images.forEach(img => img.style.display = 'none');
+
+
+
+        this.images[this.currentIndex].style.display = 'block'
+    }
 
 }
 
